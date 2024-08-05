@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>File Upload Form</title>
+  <style>
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .help-block {
+      color: red;
+      font-size: 0.9em;
+    }
+    .error {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+<div class="form-container">
+  <h1>Submit Documentation for VC</h1>
+  <form role="form" name="fileUploadForm" class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-md-4" for="fileUpload">Upload your File</label>
+      <div class="col-md-8">
+        <input type="file"
+               id="fileUpload"
+               cam-variable-name="uploadedFile"
+               cam-variable-type="File"
+               cam-max-filesize="10000000"
+               class="form-control"/>
+        <div class="help-block">This field is required</div>
+      </div>
+    </div>
+
+    <script cam-script type="text/form-script">
+          var fileUpload = document.getElementById('fileUpload');
+          var fileUploadHelpBlock = fileUpload.nextElementSibling;
+
+          function flagFileUpload() {
+            var hasFile = fileUpload.files.length > 0;
+            if (hasFile) {
+              fileUpload.classList.remove('ng-invalid');
+              fileUploadHelpBlock.classList.remove('error');
+            } else {
+              fileUpload.classList.add('ng-invalid');
+              fileUploadHelpBlock.classList.add('error');
+            }
+            return hasFile;
+          }
+
+          fileUpload.addEventListener('change', flagFileUpload);
+
+          camForm.on('submit', function(evt) {
+            var hasFile = flagFileUpload();
+
+            // prevent submit if user has not provided a file
+            evt.submitPrevented = !hasFile;
+          });
+        </script>
+  </form>
+</div>
+</body>
+</html>

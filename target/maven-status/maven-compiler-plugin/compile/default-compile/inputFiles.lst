@@ -1,0 +1,8 @@
+C:\Users\pkont\Desktop\dome camunda- onboarding\onboarding-process\src\main\java\com\example\dome\Application.java
+C:\Users\pkont\Desktop\dome camunda- onboarding\onboarding-process\src\main\java\com\example\dome\delegate\AssigneeTaskListener.java
+C:\Users\pkont\Desktop\dome camunda- onboarding\onboarding-process\src\main\java\com\example\dome\delegate\DocumentationSubmittedMessage.java
+C:\Users\pkont\Desktop\dome camunda- onboarding\onboarding-process\src\main\java\com\example\dome\delegate\VcCreationApprovedMessage.java
+C:\Users\pkont\Desktop\dome camunda- onboarding\onboarding-process\src\main\java\com\example\dome\delegate\DocumentationRevision.java
+C:\Users\pkont\Desktop\dome camunda- onboarding\onboarding-process\src\main\java\com\example\dome\delegate\DocumentationRejectedMessage.java
+C:\Users\pkont\Desktop\dome camunda- onboarding\onboarding-process\src\main\java\com\example\dome\delegate\SendVcInformation.java
+C:\Users\pkont\Desktop\dome camunda- onboarding\onboarding-process\src\main\java\com\example\dome\delegate\VcCreatedMessage.java

@@ -1,0 +1,8 @@
+com\example\dome\delegate\AssigneeTaskListener.class
+com\example\dome\delegate\DocumentationSubmittedMessage.class
+com\example\dome\delegate\VcCreationApprovedMessage.class
+com\example\dome\delegate\SendVcInformation.class
+com\example\dome\delegate\VcCreatedMessage.class
+com\example\dome\delegate\DocumentationRevision.class
+com\example\dome\Application.class
+com\example\dome\delegate\DocumentationRejectedMessage.class
