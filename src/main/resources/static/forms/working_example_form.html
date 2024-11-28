@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Form</title>
+</head>
+<body>
+    <form class="form-horizontal" role="form" name="startForm">
+        <legend>Loan Request Form</legend>
+
+        <!-- Input Text -->
+        <div class="form-group">
+            <label for="inputFirstname">First Name</label>
+            <input id="inputFirstname"
+                   required
+                   type="text"
+                   cam-variable-name="firstname"
+                   cam-variable-type="String"
+                   placeholder="John"
+                   ng-minlength="2"
+                   ng-maxlength="20" />
+        </div>
+
+        <!-- Input Number -->
+        <div class="form-group">
+            <label for="inputLoanAmount">Loan Amount</label>
+            <input id="inputLoanAmount"
+                   required
+                   type="number"
+                   cam-variable-name="loanAmount"
+                   cam-variable-type="Double"
+                   min="1000" />
+        </div>
+
+        <!-- Select Box -->
+        <div class="form-group">
+            <label for="selectLoanType">Loan Type</label>
+            <select id="selectLoanType" required cam-variable-name="loanType" cam-variable-type="String">
+                <option value="mortage" checked>Mortage Loan (5%)</option>
+                <option value="cashAdvance">Cash Advance (10%)</option>
+            </select>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <textarea id="inputAddress"
+                      cam-variable-name="address"
+                      cam-variable-type="String"
+                      rows="4"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script cam-script type="text/form-script">
+        var form = document.forms['startForm'];
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var variables = camForm.variableManager.variables;
+
+            camForm.variableManager.createVariable({
+                name: 'firstname',
+                type: 'String',
+                value: form['firstname'].value
+            });
+
+            camForm.variableManager.createVariable({
+                name: 'loanAmount',
+                type: 'Double',
+                value: parseFloat(form['loanAmount'].value)
+            });
+
+            camForm.variableManager.createVariable({
+                name: 'loanType',
+                type: 'String',
+                value: form['loanType'].value
+            });
+
+            camForm.variableManager.createVariable({
+                name: 'address',
+                type: 'String',
+                value: form['address'].value
+            });
+
+            camForm.submit();
+        });
+    </script>
+</body>
+</html>

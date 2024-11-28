@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Representative Form</title>
+</head>
+<body>
+<form class="form-horizontal" role="form" name="startForm">
+    <legend>Legal Representative and Company Information</legend>
+
+    <!-- Legal Representative Information -->
+    <div class="form-group">
+        <h3>Legal Representative of the Company</h3>
+        <label for="inputLegalRepFirstName">First Name</label>
+        <input id="inputLegalRepFirstName"
+               required
+               type="text"
+               cam-variable-name="LegalRepFirstName"
+               cam-variable-type="String"
+               placeholder="First Name"/>
+
+        <label for="inputLegalRepLastName">Last Name</label>
+        <input id="inputLegalRepLastName"
+               required
+               type="text"
+               cam-variable-name="LegalRepLastName"
+               cam-variable-type="String"
+               placeholder="Last Name"/>
+
+        <label for="inputLegalRepNationality">Nationality</label>
+        <input id="inputLegalRepNationality"
+               required
+               type="text"
+               cam-variable-name="LegalRepNationality"
+               cam-variable-type="String"
+               placeholder="Nationality"/>
+
+        <label for="inputLegalRepIDNumber">ID Card Number</label>
+        <input id="inputLegalRepIDNumber"
+               required
+               type="text"
+               cam-variable-name="LegalRepIDNumber"
+               cam-variable-type="String"
+               placeholder="ID Card Number"/>
+
+        <label for="inputLegalRepEmail">Email</label>
+        <input id="inputLegalRepEmail"
+               required
+               type="email"
+               cam-variable-name="LegalRepEmail"
+               cam-variable-type="String"
+               placeholder="Email"/>
+    </div>
+
+    <!-- Company Information -->
+    <div class="form-group">
+        <h3>Company Information</h3>
+        <label for="inputCompanyName">Company Name</label>
+        <input id="inputCompanyName"
+               required
+               type="text"
+               cam-variable-name="CompanyName"
+               cam-variable-type="String"
+               placeholder="Company Name"/>
+
+        <label for="inputCompanyStreetName">Street Name and Number</label>
+        <input id="inputCompanyStreetName"
+               required
+               type="text"
+               cam-variable-name="CompanyStreetName"
+               cam-variable-type="String"
+               placeholder="Street Name and Number"/>
+
+        <label for="inputCompanyCity">City</label>
+        <input id="inputCompanyCity"
+               required
+               type="text"
+               cam-variable-name="CompanyCity"
+               cam-variable-type="String"
+               placeholder="City"/>
+
+        <label for="inputCompanyPostal">Postal Code</label>
+        <input id="inputCompanyPostal"
+               required
+               type="text"
+               cam-variable-name="CompanyPostal"
+               cam-variable-type="String"
+               placeholder="Postal Code"/>
+
+        <label for="inputCompanyCountry">Country</label>
+        <input id="inputCompanyCountry"
+               required
+               type="text"
+               cam-variable-name="CompanyCountry"
+               cam-variable-type="String"
+               placeholder="Country"/>
+
+        <label for="inputCompanyVATID">VAT Number</label>
+        <input id="inputCompanyVATID"
+               required
+               type="text"
+               cam-variable-name="CompanyVATID"
+               cam-variable-type="String"
+               placeholder="VAT Number"/>
+    </div>
+
+    <!-- LEAR Information -->
+    <div class="form-group">
+        <h3>Information About the LEAR</h3>
+        <label for="inputLEARFirstName">LEAR First Name</label>
+        <input id="inputLEARFirstName"
+               required
+               type="text"
+               cam-variable-name="LEARFirstName"
+               cam-variable-type="String"
+               placeholder="LEAR First Name"/>
+
+        <label for="inputLEARLastName">LEAR Last Name</label>
+        <input id="inputLEARLastName"
+               required
+               type="text"
+               cam-variable-name="LEARLastName"
+               cam-variable-type="String"
+               placeholder="LEAR Last Name"/>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script cam-script type="text/form-script">
+    var form = document.forms['startForm'];
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        camForm.variableManager.createVariable({
+            name: 'LegalRepFirstName',
+            type: 'String',
+            value: form['LegalRepFirstName'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'LegalRepLastName',
+            type: 'String',
+            value: form['LegalRepLastName'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'LegalRepNationality',
+            type: 'String',
+            value: form['LegalRepNationality'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'LegalRepIDNumber',
+            type: 'String',
+            value: form['LegalRepIDNumber'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'LegalRepEmail',
+            type: 'String',
+            value: form['LegalRepEmail'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'CompanyName',
+            type: 'String',
+            value: form['CompanyName'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'CompanyStreetName',
+            type: 'String',
+            value: form['CompanyStreetName'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'CompanyCity',
+            type: 'String',
+            value: form['CompanyCity'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'CompanyPostal',
+            type: 'String',
+            value: form['CompanyPostal'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'CompanyCountry',
+            type: 'String',
+            value: form['CompanyCountry'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'CompanyVATID',
+            type: 'String',
+            value: form['CompanyVATID'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'LEARFirstName',
+            type: 'String',
+            value: form['LEARFirstName'].value
+        });
+
+        camForm.variableManager.createVariable({
+            name: 'LEARLastName',
+            type: 'String',
+            value: form['LEARLastName'].value
+        });
+
+        camForm.submit();
+    });
+
+</script>
+</body>
+</html>
